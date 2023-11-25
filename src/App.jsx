@@ -1,12 +1,10 @@
 import React from 'react'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import { Flex, Spacer } from '@chakra-ui/react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './components/Home.jsx'
 import Cart from './components/Cart.jsx'
-import ItemListContainer from './components/ItemListContainer'
-import ProductDetail from './components/ProductDetail.jsx'
+import ItemDetailContainer from './components/ItemDetailContainer'
 
 //ejecutar npm install react-router-dom
 const App = () => {
@@ -17,9 +15,8 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Home/>}/>
           <Route exact path='/cart' element={<Cart/>}/>
-          <Route exact path='/itemListContainer' element={<ItemListContainerS/>}/>
-          <Route exact path='/producto/:id' element={<ProductDetail/>}/>
-          <Route exact path='/productos/categoria' element={<ItemListContainer/>}/>
+          <Route exact path="/category/:category" element={<ItemListContainer />} />
+          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
         
       </BrowserRouter>

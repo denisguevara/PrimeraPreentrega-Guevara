@@ -1,9 +1,12 @@
 import React from 'react'
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
+    return (
+        <>
+            <h1>Bienvenidos a la tienda virtual de River Plate</h1>
+
+        </>
+    )
 }
 
 export default Home

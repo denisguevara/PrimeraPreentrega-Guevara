@@ -1,11 +1,8 @@
 import React from 'react'
-import ItemList from './ItemList'
-import { Center } from '@chakra-ui/react'
-import { useParams } from 'react-router-dom'
+import ItemDetail from './ItemDetail'
 
-
-const ItemListContainer = () => {
-  const {category} = useParams()
+const ItemDetailContainer = () => {
+  
   const productos = [
     {id: 1, nombre:"PRODUCTO A",descripcion:"Descripcion de producto A",stock:3, category:"cat 1"},
     {id: 2, nombre:"PRODUCTO B",descripcion:"Descripcion de producto B",stock:6, category:"cat2"},
@@ -24,7 +21,7 @@ const ItemListContainer = () => {
         resolve(productos)
       },2000)
       } else {
-        reject(new Error("no hay datos"))
+        rejeat(new Error("no hay datos"))
       }
     })
 
@@ -35,15 +32,13 @@ const ItemListContainer = () => {
         console.log(error)
       })
 
-    const filteredProducts = productos.filter((producto) => producto.category === category)
-  
-  return (
-    <Center p='1rem'>
-      <ItemList
-        productos = {filteredProducts}
-      />
-    </Center>
-  )
+      return (
+        <>
+            <ItemDetail
+                productos={productos}
+            />
+        </>
+    )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
